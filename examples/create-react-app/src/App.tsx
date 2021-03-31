@@ -7,6 +7,7 @@ import { locales, dynamicActivate } from './i18n';
 
 function App() {
   const [count, setCount] = useState(0);
+  const message = "message"
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +19,9 @@ function App() {
               {locale}
             </button>
           ))}
+        </div>
+        <div> 
+          <Trans>Hello, {message + count}</Trans>
         </div>
         <h3><Trans>Plurals example: </Trans></h3>
         <div className="lang-container">
@@ -46,6 +50,7 @@ function App() {
           I have a balance of {i18n.number(1_000_000, { style: "currency", currency: "EUR" })}
           </Trans>
         </div>
+        
       </header>
     </div>
   );
